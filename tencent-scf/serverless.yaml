@@ -1,0 +1,21 @@
+# 组件信息
+app: g
+component: scf # (必填) 引用 component 的名称，当前用到的是 tencent-scf 组件
+name: users # (必填) 该组件创建的实例名称
+stage: dev # (可选) 用于区分环境信息，默认值是 dev
+
+# 组件参数
+inputs:
+  name: ${name}-${stage}-${app} # 函数名称
+  src: ./src # 代码路径
+  runtime: Nodejs10.15 # 云函数的运行时环境。除 Nodejs10.15 外，可选值为：Python2.7、Python3.6、Nodejs6.10、Nodejs8.9、PHP5、PHP7、Golang1、Java8。
+  region: ap-guangzhou # 云函数所在区域
+  handler: index.main_handler #入口
+  events:
+    - http:
+        parameters:
+          netConfig:
+            enableIntranet: true
+            enableExtranet: true
+          qualifier: $DEFAULT
+          authType: NONE

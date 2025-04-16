@@ -1,0 +1,14 @@
+### SCF
+GET https://1258122687-0wsk05ogsd.ap-guangzhou.tencentscf.com HTTP/1.1
+
+### website
+GET https://my-bucket-1258122687.cos-website.ap-beijing.myqcloud.com HTTP/1.1
+
+### express
+GET https://1258122687-ceuhmb5e1n.ap-guangzhou.tencentscf.com HTTP/1.1
+
+### 
+GET https://1258122687-ceuhmb5e1n.ap-guangzhou.tencentscf.com/user HTTP/1.1
+
+### 
+GET https://1258122687-ceuhmb5e1n.ap-guangzhou.tencentscf.com/user/1 HTTP/1.1

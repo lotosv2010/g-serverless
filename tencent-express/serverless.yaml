@@ -1,0 +1,23 @@
+component: http
+name: express-web
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+  faas:
+    runtime: Nodejs12.16
+    framework: express
+    name: ${name}
+    events:
+      - http:
+          parameters:
+            netConfig:
+              enableIntranet: true
+              enableExtranet: true
+            qualifier: $DEFAULT
+            authType: NONE
+    layers:
+      - name: '${output:${stage}:${app}:express-web-layer.name}'
+        version: '${output:${stage}:${app}:express-web-layer.version}'
+app: express-web

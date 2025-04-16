@@ -1,0 +1,13 @@
+org: '1258122687'
+app: express-web
+stage: dev
+component: layer
+name: express-web-layer
+inputs:
+  name: express-web-layer
+  region: ap-guangzhou
+  src:
+    src: ../node_modules
+    targetDir: /node_modules
+  runtimes:
+    - Nodejs12.16
